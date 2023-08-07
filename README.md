@@ -7,6 +7,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm start`
+### `npm install -D tailwindcss `
+### `npm install -D tailwindcss `
+### `npm install react-bootstrap bootstrap`
+### `npm install react-responsive-carousel --save`
+### `npx tailwindcss init `
+### `npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch`
+### `yarn start`
+
+### `npx create-react-app my-app`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
