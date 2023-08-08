@@ -1,38 +1,57 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./navbar.css";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaYoutubeSquare,
+} from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-function Navbar() {
-    return (
-        <div>
-            <nav class="container flex justify-between px-4 py-8 mx-auto bg-white">
-  <div>
-    <h3 class="text-2xl font-medium text-blue-500">Razorpay</h3>
-  </div>
-  <div class="hidden space-x-8 lg:flex">
-    <a href="">Home</a>
-    <a href="">About Us</a>
-    <a href="">Blogs</a>
-    <a href="">Our Team</a>
-    <a href="">Contact Us</a>
-  </div>
-  <div class="flex lg:hidden">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-6 h-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"
-      />
-    </svg>
-  </div>
-</nav>
+import { NavLink } from "react-router-dom";
+
+const Navbar = () => {
+  const [showMediaIcons, setShowMediaIcons] = useState(false);
+  return (
+    <>
+      <nav className="main-nav">
+        {/* 1st logo part  */}
+        <div className="logo">
+          <h2>
+            <span>R</span>azor
+            <span>P</span>ay
+          </h2>
         </div>
-    )
-}
+        <div
+          className={
+            showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
+          }
+        >
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/service">Services</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
 
-export default Navbar
+        <div className="social-media">
+          <div className="hamburger-menu">
+            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+              <GiHamburgerMenu />
+            </a>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Navbar;
